@@ -60,7 +60,7 @@ public class voice_module : NetworkBehaviour
             //Debug.Log("[client] OnDeserialize : " + netId);
 
             m_netDir = reader.ReadVector2();
-            m_netTruePos = reader.ReadVector2();
+            m_netTruePos = reader.ReadVector3();
 
 
             //Debug.Log("OnDeserialize Dir :" + m_netDir);
