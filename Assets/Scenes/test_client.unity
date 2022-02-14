@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_player: {fileID: 0}
-  my_joystick: {fileID: 0}
+  my_joystick: {fileID: 431138157}
 --- !u!4 &1309738926
 Transform:
   m_ObjectHideFlags: 0
@@ -3306,7 +3306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1687716841
 Transform:
   m_ObjectHideFlags: 0
@@ -3846,6 +3846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042614719299823826, guid: bf599cca144249146bd211516bf334de,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5042614719299823828, guid: bf599cca144249146bd211516bf334de,
         type: 3}
