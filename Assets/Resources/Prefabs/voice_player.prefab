@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 2258478752041352640}
   - component: {fileID: -7167198996924427119}
   - component: {fileID: 7996557589437422682}
-  - component: {fileID: 204389495844740619}
   m_Layer: 0
   m_Name: voice_player
   m_TagString: Untagged
@@ -197,16 +196,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &204389495844740619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8831045539751322815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab5f404477c7a3042b9c8be8afcce9bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Color: {r: 0.9528302, g: 0.9160604, b: 0.16629584, a: 0}
