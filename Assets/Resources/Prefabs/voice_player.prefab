@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tokens:
     _tokens: []
-  _channelTypeExpanded: 0
+  _channelTypeExpanded: 1
   _metadataExpanded: 0
   _activationModeExpanded: 1
   _tokensExpanded: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
     _fadeInTicks: 7500000
     _fadeOutTicks: 11500000
   _broadcastPosition: 1
-  _channelType: 0
+  _channelType: 1
   _inputName: 
   _mode: 1
   _muted: 0
