@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5f404477c7a3042b9c8be8afcce9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 0, b: 0, a: 0}
+  Color: {r: 0.09251513, g: 0.9339623, b: 0.2999118, a: 0}
 --- !u!114 &534730858
 MonoBehaviour:
   m_ObjectHideFlags: 0
