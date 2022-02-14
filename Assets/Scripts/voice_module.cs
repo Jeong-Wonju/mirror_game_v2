@@ -109,5 +109,23 @@ public class voice_module : NetworkBehaviour
             CmdCharMove(Dir, net_pos);
 
         }
+        else
+        {
+            Vector3 pos = transform.position;
+            
+
+            Vector3 Dir = m_netTruePos - pos;
+            //Dir.Normalize();
+
+            pos.x = pos.x + Dir.x * Time.deltaTime * speed;
+            pos.z = pos.z + Dir.z * Time.deltaTime * speed;
+
+            float short_dis = Vector3.Distance(pos, m_netTruePos);
+            //Debug.Log("short_dis : " + short_dis);
+            if (short_dis >= 0.038f)
+                transform.position = pos;
+            else
+                transform.position = m_netTruePos;
+        }
     }
 }
