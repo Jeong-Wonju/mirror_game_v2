@@ -42,7 +42,7 @@ public class voice_module : NetworkBehaviour
         //Debug.Log("[server] OnSerialize : " + name);
 
         writer.WriteVector2((Vector2)m_netDir);
-        writer.WriteVector3((Vector2)m_netTruePos);
+        writer.WriteVector3((Vector3)m_netTruePos);
 
 
         //Debug.Log("OnSerialize Dir :" + m_netDir);
