@@ -105,9 +105,9 @@ public class NetworkManagerWorld : NetworkManager
     {
         Util.LogColorYellow("OnServerCharacterSelect msg idx : " + message.index);
 
-        
+
         // load character data
-        test_player prefab = spawnPrefabs[message.index].GetComponent<test_player>();
+        voice_module prefab = spawnPrefabs[2].GetComponent<voice_module>();
         if (prefab != null)
         {
             GameObject go = Instantiate(prefab.gameObject);
