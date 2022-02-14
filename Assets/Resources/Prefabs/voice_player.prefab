@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8426746056808502380}
   - component: {fileID: 6562409206972175014}
   - component: {fileID: 7951323087186817643}
-  - component: {fileID: 259359589704584603}
-  - component: {fileID: 2103079906762604396}
-  - component: {fileID: 1222817827408926660}
-  - component: {fileID: 3735355868681096342}
-  - component: {fileID: -993076292096493768}
+  - component: {fileID: 6813533854721740333}
+  - component: {fileID: 1821297222950885004}
+  - component: {fileID: 379467158017869313}
+  - component: {fileID: 2258478752041352640}
+  - component: {fileID: -7167198996924427119}
   m_Layer: 0
   m_Name: voice_player
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &259359589704584603
-BoxCollider:
+--- !u!135 &6813533854721740333
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,9 +95,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.71
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2103079906762604396
+--- !u!114 &1821297222950885004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 1e0daec77d1758148a9d842a1933e0b5
   hasSpawned: 0
---- !u!114 &1222817827408926660
+--- !u!114 &379467158017869313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
---- !u!114 &3735355868681096342
+--- !u!114 &2258478752041352640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tokens:
     _tokens: []
-  _channelTypeExpanded: 1
+  _channelTypeExpanded: 0
   _metadataExpanded: 0
   _activationModeExpanded: 1
   _tokensExpanded: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
     _fadeInTicks: 7500000
     _fadeOutTicks: 11500000
   _broadcastPosition: 1
-  _channelType: 1
+  _channelType: 0
   _inputName: 
   _mode: 1
   _muted: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   _useTrigger: 1
   _roomName: 
   _priority: -2
---- !u!114 &-993076292096493768
+--- !u!114 &-7167198996924427119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
