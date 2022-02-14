@@ -12,6 +12,11 @@ public class JoystickSetterExample : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
         GameObjectManager.instance.my_joystick = this;
     }
 
