@@ -307,7 +307,7 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 7849662465082056573, guid: 7c8c6261add6c564dab95286dc0cfecb, type: 3}
   - {fileID: 5046017731976465851, guid: 7bdfc582819e7784c9e82c12fabcdb73, type: 3}
-  - {fileID: 9026120554480383013, guid: e007c6160505f1f49b11ebb3639f2968, type: 3}
+  - {fileID: 1528011063499508, guid: 33b43533fb4799c4796560f465e0eb26, type: 3}
   state: 0
   serverList:
   - name: Local
