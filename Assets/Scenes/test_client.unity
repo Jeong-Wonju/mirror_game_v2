@@ -269,7 +269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ac79b29903fd755408ffdf7957cd8dea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5f404477c7a3042b9c8be8afcce9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0.4811321, g: 0.16113387, b: 0.46861246, a: 0}
+  Color: {r: 0.4783834, g: 0.16078433, b: 0.48235294, a: 0}
 --- !u!114 &1164831773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2874,7 +2874,7 @@ MonoBehaviour:
   _mode: 1
   _muted: 0
   _playerId: 
-  _useTrigger: 0
+  _useTrigger: 1
   _roomName: Room A
   _priority: -2
 --- !u!65 &1164831775

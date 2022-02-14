@@ -114,7 +114,7 @@ MonoBehaviour:
     _tokens: []
   _channelTypeExpanded: 1
   _metadataExpanded: 0
-  _activationModeExpanded: 0
+  _activationModeExpanded: 1
   _tokensExpanded: 0
   _ampExpanded: 0
   _activationFaderSettings:
@@ -131,7 +131,7 @@ MonoBehaviour:
   _mode: 1
   _muted: 0
   _playerId: 
-  _useTrigger: 0
+  _useTrigger: 1
   _roomName: 
   _priority: -2
 --- !u!114 &7100310892492015271
