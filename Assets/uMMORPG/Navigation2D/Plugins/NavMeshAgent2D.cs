@@ -41,7 +41,7 @@ public class NavMeshAgent2D : MonoBehaviour
     void Awake()
     {
         // create projection
-        var go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         go.name = "NAVIGATION2D_AGENT";
         // project object to 3D (at y=0.5 so feet are at y=0 on navmesh)
         go.transform.position = NavMeshUtils2D.ProjectObjectTo3D(transform.position);
@@ -70,7 +70,7 @@ public class NavMeshAgent2D : MonoBehaviour
         float maxdist = 2; // default if no collider
         if (collider2D != null)
         {
-            var bounds = collider2D.bounds;
+            Bounds bounds = collider2D.bounds;
             maxdist = Mathf.Max(bounds.extents.x, bounds.extents.y) * 2;
         }
 
@@ -166,7 +166,7 @@ public class NavMeshAgent2D : MonoBehaviour
 
     public bool CalculatePath(Vector2 targetPosition, NavMeshPath2D path)
     {
-        var temp = new NavMeshPath();
+        NavMeshPath temp = new NavMeshPath();
         if (agent.CalculatePath(NavMeshUtils2D.ProjectPointTo3D(targetPosition), temp))
         {
             // convert 3D to 2D
@@ -183,20 +183,11 @@ public class NavMeshAgent2D : MonoBehaviour
         set { agent.destination = NavMeshUtils2D.ProjectPointTo3D(value); }
     }
 
-    public bool hasPath
-    {
-        get { return agent.hasPath; }
-    }
+    public bool hasPath=> agent.hasPath;
 
-    public bool isOnNavMesh
-    {
-        get { return agent.isOnNavMesh; }
-    }
+    public bool isOnNavMesh => agent.isOnNavMesh;
 
-    public bool isPathStale
-    {
-        get { return agent.isPathStale; }
-    }
+    public bool isPathStale => agent.isPathStale;
 
     public bool isStopped
     {
@@ -210,27 +201,15 @@ public class NavMeshAgent2D : MonoBehaviour
         set { agent.obstacleAvoidanceType = value; }
     }
 
-    public NavMeshPath2D path
+    public NavMeshPath2D path => new NavMeshPath2D
     {
-        get
-        {
-            return new NavMeshPath2D()
-            {
-                corners = agent.path.corners.Select(NavMeshUtils2D.ProjectTo2D).ToArray(),
-                status = agent.path.status
-            };
-        }
-    }
+        corners = agent.path.corners.Select(NavMeshUtils2D.ProjectTo2D).ToArray(),
+        status = agent.path.status
+    };
 
-    public bool pathPending
-    {
-        get { return agent.pathPending; }
-    }
+    public bool pathPending => agent.pathPending;
 
-    public NavMeshPathStatus pathStatus
-    {
-        get { return agent.pathStatus; }
-    }
+    public NavMeshPathStatus pathStatus => agent.pathStatus;
 
     public float radius
     {
@@ -238,15 +217,9 @@ public class NavMeshAgent2D : MonoBehaviour
         set { agent.radius = value; }
     }
 
-    public float remainingDistance
-    {
-        get { return agent.remainingDistance; }
-    }
+    public float remainingDistance => agent.remainingDistance;
 
-    public void ResetPath()
-    {
-        agent.ResetPath();
-    }
+    public void ResetPath() => agent.ResetPath();
 
     public void SetDestination(Vector2 v)
     {
@@ -268,10 +241,8 @@ public class NavMeshAgent2D : MonoBehaviour
     // we set transform.position to agent.position in each Update, but if we
     // need the 100% 'true position right now' then we can also use this one:
     // (this was important for uMMORPG 2D)
-    public Vector2 truePosition
-    {
-        get { return NavMeshUtils2D.ProjectTo2D(agent.transform.position); }
-    }
+    public Vector2 truePosition =>
+        NavMeshUtils2D.ProjectTo2D(agent.transform.position);
 
     public Vector2 velocity
     {

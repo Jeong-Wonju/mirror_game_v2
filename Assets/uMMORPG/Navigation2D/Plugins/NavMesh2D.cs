@@ -2,15 +2,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public struct NavMeshHit2D
-{
-    public Vector2 position;
-    public Vector2 normal;
-    public float distance;
-    public int mask;
-    public bool hit;
-}
-
 public static class NavMesh2D
 {
     public const int AllAreas = -1;
@@ -20,6 +11,14 @@ public static class NavMesh2D
     // => let's have a const so we don't need to hardcode the value everywhere.
     public const float ProjectedObjectY = 0.5f;
 
+    // when sampling positions, the 2D position is projected to 3D.
+    // in 3D, the baked Navmesh is never exactly at Y=0.
+    // it seems to at around 0.05 above the ground.
+    // so include that distance for sampling.
+    public const float DistanceAboveGroundIn3D = 0.1f;
+
+    // raycast to see if there's anything between source and target.
+    // returns true if hit something, false if hit nothing.
     // based on: https://docs.unity3d.com/ScriptReference/AI.NavMesh.Raycast.html
     public static bool Raycast(Vector2 sourcePosition, Vector2 targetPosition, out NavMeshHit2D hit, int areaMask)
     {
@@ -40,9 +39,18 @@ public static class NavMesh2D
         return false;
     }
 
+    // check if a position is on navmesh.
     // based on: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
+    // NOTE: distance=0 always returns false even on navmesh. use at least 0.01f
     public static bool SamplePosition(Vector2 sourcePosition, out NavMeshHit2D hit, float maxDistance, int areaMask)
     {
+        // when sampling positions, the 2D position is projected to 3D.
+        // in 3D, the baked Navmesh is never exactly at Y=0.
+        // it seems to at around 0.05 above the ground.
+        // so include that distance for sampling.
+        // => see Test: SamplePosition_OnNavMesh_Distance0
+        maxDistance += DistanceAboveGroundIn3D;
+
         NavMeshHit hit3D;
         if (NavMesh.SamplePosition(NavMeshUtils2D.ProjectPointTo3D(sourcePosition), out hit3D, maxDistance, areaMask))
         {

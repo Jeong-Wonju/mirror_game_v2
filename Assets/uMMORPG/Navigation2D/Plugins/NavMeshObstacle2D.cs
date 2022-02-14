@@ -17,7 +17,7 @@ public class NavMeshObstacle2D : MonoBehaviour
     void Awake()
     {
         // create projection
-        var go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         go.name = "NAVIGATION2D_OBSTACLE";
         // project object to 3D (at y=0.5 so feet are at y=0 on navmesh)
         go.transform.position = NavMeshUtils2D.ProjectObjectTo3D(transform.position);
