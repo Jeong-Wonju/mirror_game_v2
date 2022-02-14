@@ -9,10 +9,66 @@ public class voice_module : NetworkBehaviour
 
     public float speed = 5;
 
+    Vector2 m_netDir;
+    Vector3 m_netTruePos;
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    [Command]
+    public void CmdCharMove(Vector2 Dir, Vector3 TruePos)
+    {
+        //Debug.Log("CmdCharMove : (NetID)" + netIdentity.netId);
+
+        m_netDir = Dir;
+        m_netTruePos = TruePos;
+
+        transform.position = m_netTruePos;
+
+
+        //Debug.Log("CmdCharMove Dir :" + m_netDir);
+        //Debug.Log("CmdCharMove true_pos :" + m_netTruePos);
+
+
+        SetDirtyBit(1);
+    }
+
+    [Server]
+    public override bool OnSerialize(NetworkWriter writer, bool initialState)
+    {
+        //Debug.Log("[server] OnSerialize : " + name);
+
+        writer.WriteVector2((Vector2)m_netDir);
+        writer.WriteVector3((Vector2)m_netTruePos);
+
+
+        //Debug.Log("OnSerialize Dir :" + m_netDir);
+        //Debug.Log("OnSerialize true_pos :" + m_netTruePos);
+
+
+        return true;
+    }
+
+    [Client]
+    public override void OnDeserialize(NetworkReader reader, bool initialState)
+    {
+        //if (!isLocalPlayer)
+        {
+            //Debug.Log("[client] OnDeserialize : " + netId);
+
+            m_netDir = reader.ReadVector2();
+            m_netTruePos = reader.ReadVector2();
+
+
+            //Debug.Log("OnDeserialize Dir :" + m_netDir);
+            //Debug.Log("OnDeserialize true_pos :" + m_netTruePos);
+            //Debug.Log("OnDeserialize sync :" + m_bSync);
+
+
+        }
     }
 
     [Client]
@@ -50,7 +106,7 @@ public class voice_module : NetworkBehaviour
 
             Vector3 net_pos = transform.position;
 
-            GetComponent<test_player>().CmdCharMove(Dir, net_pos);
+            CmdCharMove(Dir, net_pos);
 
         }
     }
