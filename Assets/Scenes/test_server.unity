@@ -422,7 +422,7 @@ MonoBehaviour:
   _mode: 1
   _muted: 0
   _playerId: 
-  _useTrigger: 0
+  _useTrigger: 1
   _roomName: Room A
   _priority: -2
 --- !u!65 &534730860
